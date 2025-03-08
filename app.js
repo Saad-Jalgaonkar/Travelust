@@ -22,6 +22,7 @@ const app = express();
 // const MONGO_URL = "mongodb://127.0.0.1:27017/traveLust";
 const Atlas_Db_Url = process.env.ATLAS_DB_URL;
 
+// idher se
 const store = MongoStore.create({
   mongoUrl: Atlas_Db_Url,
   crypto: {
@@ -33,9 +34,10 @@ const store = MongoStore.create({
 store.on("error", () => {
   console.log("ERROR in mongo session store", error);
 });
+// idher tak
 
 const sessionOptions = {
-  store,
+  store, // isko bhi
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
